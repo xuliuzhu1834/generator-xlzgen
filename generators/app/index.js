@@ -2,6 +2,7 @@
 const Gen = require('yeoman-generator');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
+const cmd = require('child_process');
 const tpl = require('./templates/tpl');
 
 module.exports = class extends Gen {
@@ -40,7 +41,8 @@ module.exports = class extends Gen {
             this.fs.write(`${path}/${v}/types.js`, tpl.types());
             this.fs.write(`${path}/${v}/saga.js`, tpl.saga());
             this.fs.write(`${path}/${v}/reducers.js`, tpl.reducer());
-          })
+          });
+          cmd.exec(`git add .`);
         } else {
           this.log('该文件夹已经存在');
         }
