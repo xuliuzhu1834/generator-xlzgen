@@ -1,7 +1,8 @@
 {
   "name": "generator-xlzgen",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "for LT easy coding",
+  "homepage": "https://github.com/xuliuzhu1834",
   "main": "index.js",
   "engines": {
     "node": ">=6.5",
@@ -16,7 +17,8 @@
   "keywords": [
     "yeoman-generator"
   ],
-  "author": "",
+  "author": "xuliuzhu",
+  "repository": "https://github.com/xuliuzhu1834/generator-xlzgen",
   "license": "ISC",
   "dependencies": {
     "mkdirp": "^0.5.1",
