@@ -16,7 +16,6 @@ module.exports = class extends Gen {
       message: '请输入文件夹名称',
     }]).then((res) => {
       const path = this.destinationPath(res.name);
-      console.log(path,'path');
 
       fs.exists(path, (e) => {
         if (!e) {
