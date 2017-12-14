@@ -1,7 +1,19 @@
 写着玩
 
 自动生成模版文件夹
-
+```
+  -- your file
+    -- list
+      -- view.jsx  
+      -- reducers.js
+      -- action.js
+      -- types.js
+      -- saga.js
+    -- add
+      ...
+    -- edit
+      ...
+```    
 
 Usage
 -------------
