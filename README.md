@@ -1,5 +1,20 @@
 写着玩
 
+自动生成模版文件夹
+name
+  ├── server.js
+  ├── list
+  │    ├── view.jsx
+  │    ├── reducer.js
+  │    ├── action.js
+  │    ├── saga.js
+  │    ├── style.css
+  │    └── types.js
+  ├── add
+  │   └──  ...
+  ├── edit
+  │     └──  ...
+
 Usage
 -------------
 
