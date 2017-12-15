@@ -90,7 +90,10 @@ export const commit = (key, value) => ({ type: types.commit, key, value });
 
 const saga = () => (`
 import { message } from 'antd';
-import { takeLatest, takeEvery } from 'redux-saga/effects';
+import * as types from './types';
+import { takeLatest, takeEvery, put } from 'redux-saga/effects';
+import { } from './action';
+import { } from '../server';
 
 function* saga() {
 
