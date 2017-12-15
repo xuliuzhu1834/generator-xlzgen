@@ -1,5 +1,4 @@
-const list = (name, path) => (`
-import React, { Component } from 'react';
+const list = (name, path) => (`import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -20,8 +19,7 @@ const mapStateToProps = state => state[${path}];
 export default connect(mapStateToProps)(${name}List);
 `);
 
-const add = (name, path) => (`
-import React, { Component } from 'react';
+const add = (name, path) => (`import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -42,8 +40,7 @@ const mapStateToProps = state => state[${path}];
 export default connect(mapStateToProps)(${name}Add);
 `);
 
-const edit = (name, path) => (`
-import React, { Component } from 'react';
+const edit = (name, path) => (`import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -64,8 +61,7 @@ const mapStateToProps = state => state[${path}];
 export default connect(mapStateToProps)(${name}edit);
 `);
 
-const reducer = () => (`
-import assign from 'object-assign';
+const reducer = () => (`import assign from 'object-assign';
 import * as types from './types';
 export const defaultState = {};
 
@@ -82,14 +78,12 @@ const reducer = (state = defaultState, action) => {
 export default reducer;
 `);
 
-const action = () => (`
-import * as types from './types';
+const action = () => (`import * as types from './types';
 
 export const commit = (key, value) => ({ type: types.commit, key, value });
 `);
 
-const saga = () => (`
-import { message } from 'antd';
+const saga = () => (`import { message } from 'antd';
 import { takeLatest, takeEvery, put } from 'redux-saga/effects';
 import * as types from './types';
 import { } from './action';
@@ -100,8 +94,7 @@ function* saga() {
 }
 export default saga;
 `);
-const types = () => (`
-export let commit;
+const types = () => (`export let commit;
 `);
 const style = () => ('');
 const server = (path) => ('');

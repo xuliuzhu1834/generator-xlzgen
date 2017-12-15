@@ -40,8 +40,9 @@ module.exports = class extends Gen {
             this.fs.write(`${path}/${v}/types.js`, tpl.types());
             this.fs.write(`${path}/${v}/saga.js`, tpl.saga());
             this.fs.write(`${path}/${v}/reducers.js`, tpl.reducer());
+            this.fs.write(`${path}/${v}/me.json`, "{}");
           });
-          cmd.exec(`git add .`);
+          // cmd.exec(`git add .`);
         } else {
           this.log('该文件夹已经存在');
         }
