@@ -85,7 +85,7 @@ export default reducer;
 const action = () => (`
 import * as types from './types';
 
-export const commit = (key, value) => ({ types.commit, key, value });
+export const commit = (key, value) => ({ type: types.commit, key, value });
 `);
 
 const saga = () => (`
