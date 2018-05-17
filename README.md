@@ -2,17 +2,12 @@
 
 自动生成模版文件夹
 ```
-  -- your file
-    -- list
+    -- file name
       -- view.jsx  
       -- reducers.js
       -- action.js
       -- types.js
       -- saga.js
-    -- add
-      ...
-    -- edit
-      ...
 ```    
 
 Usage
