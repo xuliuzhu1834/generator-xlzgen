@@ -31,7 +31,8 @@ if (fs.existsSync(packagePath)) {
 }
 if (fs.existsSync(webpackPath) || fs.existsSync(packageBasePath)) {
   const isWebpackExist = fs.existsSync(path.resolve(prefix, 'webpack.config.js'));
-  const webpackObj = isWebpackExist ? require(webpackPath) : require(packageBasePath);
+  let webpackObj = isWebpackExist ? require(webpackPath) : require(packageBasePath);
+  webpackObj = Array.isArray(webpackObj) ? webpackObj[0] : webpackObj;
   if (webpackObj) {
     const rules = webpackObj.module.rules;
     rules.forEach((v) => {
