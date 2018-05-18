@@ -1,6 +1,6 @@
-const list = (name, path) => (`
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+const list = (name, path, type) => (`
+import React, { Component, ${!type ? 'PropTypes' : ''}} from 'react';
+${type ? 'import PropTypes from \'prop-types\';' : ''}
 import { connect } from 'react-redux';
 
 class ${name} extends Component {
@@ -19,7 +19,19 @@ const mapStateToProps = state => state[${path}];
 export default connect(mapStateToProps)(${name});
 `);
 
-const reducer = () => (`
+const reducer = (type) => (
+  type ? `
+import * as types from './types';
+export const defaultState = {};
+
+const reducer = {
+  defaultState,
+  [types.changeValue]: (state, ({ key, value })) => { state[key] = value },
+}
+export default reducer;
+`
+    :
+    `
 import assign from 'object-assign';
 import * as types from './types';
 export const defaultState = {};
@@ -40,7 +52,7 @@ export default reducer;
 const action = () => (`
 import * as types from './types';
 
-export const chnageValue = (key, value) => ({ type: types.changeValue, key, value });
+export const changeValue = (key, value) => ({ type: types.changeValue, key, value });
 `);
 
 const saga = () => (`
@@ -54,7 +66,13 @@ function* saga() {
 }
 export default saga;
 `);
-const types = () => (`export let changeValue;`);
+const types = (path, type) => (
+  type ?
+    `export let changeValue`
+    :
+    `const prefix = '${path.replace(/\//g, '_')}_';
+export const changeValue = \`\${prefix}changeValue\`;`
+);
 const style = () => ('');
 module.exports = {
   list,

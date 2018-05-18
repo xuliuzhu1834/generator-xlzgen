@@ -21,9 +21,7 @@
   "repository": "https://github.com/xuliuzhu1834/generator-xlzgen",
   "license": "ISC",
   "dependencies": {
-    "glob": "^7.1.2",
-    "latest-version": "^3.1.0",
-    "mkdirp": "^0.5.1",
+    "compare-versions": "^3.2.1",
     "shelljs": "^0.8.2",
     "yeoman-generator": "^2.0.1"
   }
