@@ -1,5 +1,5 @@
 const list = (name, path, type) => (`
-import React, { Component, ${!type ? 'PropTypes' : ''}} from 'react';
+import React, { Component ${!type ? ', PropTypes' : ''}} from 'react';
 ${type ? 'import PropTypes from \'prop-types\';' : ''}
 import { connect } from 'react-redux';
 
@@ -26,7 +26,7 @@ export const defaultState = {};
 
 const reducer = {
   defaultState,
-  [types.changeValue]: (state, ({ key, value })) => { state[key] = value },
+  [types.changeValue]: (state, { key, value }) => { state[key] = value },
 }
 export default reducer;
 `
@@ -68,7 +68,7 @@ export default saga;
 `);
 const types = (path, type) => (
   type ?
-    `export let changeValue`
+    `export let changeValue;`
     :
     `const prefix = '${path.replace(/\//g, '_')}_';
 export const changeValue = \`\${prefix}changeValue\`;`
